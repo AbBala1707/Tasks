@@ -1,23 +1,36 @@
 package Design;
 
-import java.util.Scanner;
-
 public class Employee {
-
-	public static void main(String[] args) {
-		
-		character();
-	}
-	static void character()
+	String name;
+	float salary;
+	int age;
+	int id;
+	public Employee(String Empname,int Empid,float Empsalary,int Empage)
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter First Letter :");
-		char ch=sc.next().charAt(0);
-		System.out.println("Enter Second Letter :");
-		char ch1=sc.next().charAt(0);
-		System.out.println("Enter Third Letter :");
-		char ch2=sc.next().charAt(0);
-		System.out.println(ch2+""+ch1+""+ch);
+		name=Empname;
+		id=Empid;
+		salary=Empsalary;
+		age=Empage;
+	}
+	public void get(String name,int id,float salary,int age)
+	{
+		this.name=name;
+		this.age=age;
+		this.id=id;
+		this.salary=salary;
+	}
+	public void print()
+	{
+		System.out.println("Employee name is "+name);
+		System.out.println("Employee age is "+age);
+		System.out.println("Employee id is "+id);
+		System.out.println("Employee salary is "+salary);
+	}
+	public static void main(String[] args) {
+		Employee e=new Employee("bala",123,25000,22);
+		e.print();
+		e.get("alice",124,30000,22);
+		e.print();
 	}
 
 }
